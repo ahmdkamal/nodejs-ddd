@@ -1,0 +1,39 @@
+version: '3.4'
+services:
+  musala:
+    container_name: musala
+    restart: always
+    build: .
+    ports:
+      - '${PORT}:${PORT}'
+    environment:
+      - REDIS_URL=${REDIS_URL}
+      - NODE_ENV=docker
+      - PORT=${PORT}
+    depends_on:
+      - musaladb
+    networks:
+      - musala
+
+  musaladb:
+    image: mongo
+    container_name: musaladb
+    environment:
+      - MONGO_INITDB_DATABASE=${DB_NAME}
+      - MONGO_INITDB_ROOT_USERNAME=${DB_USERNAME}
+      - MONGO_INITDB_ROOT_PASSWORD=${DB_PASSWORD}
+    volumes:
+      - ./init-mongo.js:/docker-entrypoint-initdb.d/init-mongo.js:ro
+      - mongo-volume:/data/db
+    ports:
+      - '${DB_PORT}:27017'
+    networks:
+      - musala
+
+networks:
+  musala:
+    driver: bridge
+    name: musala
+
+volumes:
+  mongo-volume:

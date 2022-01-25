@@ -1,0 +1,1030 @@
+{
+	"info": {
+		"_postman_id": "222cd55b-1e84-4316-8c2c-971c58983abd",
+		"name": "Musala",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Gateways",
+			"item": [
+				{
+					"name": "Store Gateway",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"serialNumber\": \"1223\",\n    \"name\": \"Kamal\",\n    \"ipAddress\": \"192.168.1.1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base}}/api/v1/gateways",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"gateways"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Store Gateway",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"serialNumber\": \"12266\",\n    \"name\": \"Kamal\",\n    \"ipAddress\": \"192.168.1.1\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base}}/api/v1/gateways",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"gateways"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "234"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"ea-hh6F6e/fJCLgARqUC9egppCPNT0\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 25 Jan 2022 18:48:43 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": {\n        \"serialNumber\": \"12266\",\n        \"name\": \"Kamal\",\n        \"ipAddress\": \"192.168.1.1\",\n        \"devices\": [],\n        \"createdAt\": \"2022-01-25 08:48\",\n        \"updatedAt\": \"2022-01-25 08:48\",\n        \"id\": \"61f0460b723c8328eb20318e\"\n    },\n    \"pagination\": null,\n    \"message\": \"Success\"\n}"
+						},
+						{
+							"name": "In Case Duplication",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"serialNumber\": \"1223\",\n    \"name\": \"Kamal\",\n    \"ipAddress\": \"192.168.1.1\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base}}/api/v1/gateways",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"gateways"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "157"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"9d-zCJamOCzmOsaaigjdUK8WTA0kFs\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 25 Jan 2022 18:49:29 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"errors\": [\n        {\n            \"msg\": \"This gateway already exists, invalid value\",\n            \"param\": \"gateway\",\n            \"location\": \"body\"\n        }\n    ],\n    \"message\": \"This gateway already exists\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base}}/api/v1/gateways?page=1&per_page=100",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"gateways"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "per_page",
+									"value": "100"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get All",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base}}/api/v1/gateways?page=1&per_page=4",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"gateways"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "per_page",
+											"value": "4"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "251"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"fb-xTkTOtJnVzYj6JfVOu3lbYYQmiE\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 25 Jan 2022 18:48:33 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": [\n        {\n            \"serialNumber\": \"1229\",\n            \"name\": \"Kamal\",\n            \"ipAddress\": \"192.168.1.1\",\n            \"devices\": [],\n            \"createdAt\": \"2022-01-25 07:43\",\n            \"updatedAt\": \"2022-01-25 07:43\",\n            \"id\": \"61f036d699a2c205dc345c81\"\n        }\n    ],\n    \"pagination\": {\n        \"hasNext\": false,\n        \"total\": 1\n    },\n    \"message\": \"\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get One",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base}}/api/v1/gateways/61f04637723c8328eb203195",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"gateways",
+								"61f04637723c8328eb203195"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get One",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base}}/api/v1/gateways/61f0460b723c8328eb20318e",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"gateways",
+										"61f0460b723c8328eb20318e"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "227"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"e3-H0mBpeyLX4zu0c46h1VukcpK5C4\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 25 Jan 2022 18:48:55 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": {\n        \"serialNumber\": \"12266\",\n        \"name\": \"Kamal\",\n        \"ipAddress\": \"192.168.1.1\",\n        \"devices\": [],\n        \"createdAt\": \"2022-01-25 08:48\",\n        \"updatedAt\": \"2022-01-25 08:48\",\n        \"id\": \"61f0460b723c8328eb20318e\"\n    },\n    \"pagination\": null,\n    \"message\": \"\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Gateway",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Kamal AA\",\n    \"ipAddress\": \"192.168.1.2\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base}}/api/v1/gateways/61f0460b723c8328eb20318e",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"gateways",
+								"61f0460b723c8328eb20318e"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update Gateway",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Kamal AA\",\n    \"ipAddress\": \"192.168.1.2\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base}}/api/v1/gateways/61f0460b723c8328eb20318e",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"gateways",
+										"61f0460b723c8328eb20318e"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "230"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"e6-fPjKldBWG2BSZmvnArpa9UgFt08\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 25 Jan 2022 18:49:08 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": {\n        \"serialNumber\": \"12266\",\n        \"name\": \"Kamal AA\",\n        \"ipAddress\": \"192.168.1.2\",\n        \"devices\": [],\n        \"createdAt\": \"2022-01-25 08:48\",\n        \"updatedAt\": \"2022-01-25 08:49\",\n        \"id\": \"61f0460b723c8328eb20318e\"\n    },\n    \"pagination\": null,\n    \"message\": \"\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base}}/api/v1/gateways/61f0460b723c8328eb20318e",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"gateways",
+								"61f0460b723c8328eb20318e"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base}}/api/v1/gateways/61f0460b723c8328eb20318e",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"gateways",
+										"61f0460b723c8328eb20318e"
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"39-ghIqKqZr0acI84hvw7f5RwoiY9g\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 25 Jan 2022 18:49:55 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Devices",
+			"item": [
+				{
+					"name": "Get All Devices For Gateway",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base}}/api/v1/gateways/61f04637723c8328eb203195/devices?page=1&per_pge=15",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"gateways",
+								"61f04637723c8328eb203195",
+								"devices"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "per_pge",
+									"value": "15"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get All Devices For Gateway",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base}}/api/v1/gateways/61f04637723c8328eb203195/devices?page=1&per_pge=15",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"gateways",
+										"61f04637723c8328eb203195",
+										"devices"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "per_pge",
+											"value": "15"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "2011"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"7db-fhNnV8URPixagGUhNf375nNgeWU\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 25 Jan 2022 20:33:21 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": [\n        {\n            \"uid\": 1234,\n            \"vendor\": \"China\",\n            \"createdAt\": \"2021-01-01\",\n            \"status\": false,\n            \"gateway\": {\n                \"serialNumber\": \"1223\",\n                \"ipAddress\": \"192.168.1.1\",\n                \"id\": \"61f04637723c8328eb203195\"\n            },\n            \"id\": \"61f05580b9b42833a955a2d3\"\n        },\n        {\n            \"uid\": 1234,\n            \"vendor\": \"China\",\n            \"createdAt\": \"2021-01-01\",\n            \"status\": true,\n            \"gateway\": {\n                \"serialNumber\": \"1223\",\n                \"ipAddress\": \"192.168.1.1\",\n                \"id\": \"61f04637723c8328eb203195\"\n            },\n            \"id\": \"61f05d10a64bde3dc27e8bbf\"\n        },\n        {\n            \"uid\": 1234,\n            \"vendor\": \"China\",\n            \"createdAt\": \"2021-01-01\",\n            \"status\": true,\n            \"gateway\": {\n                \"serialNumber\": \"1223\",\n                \"ipAddress\": \"192.168.1.1\",\n                \"id\": \"61f04637723c8328eb203195\"\n            },\n            \"id\": \"61f05d11a64bde3dc27e8bc3\"\n        },\n        {\n            \"uid\": 1234,\n            \"vendor\": \"China\",\n            \"createdAt\": \"2021-01-01\",\n            \"status\": true,\n            \"gateway\": {\n                \"serialNumber\": \"1223\",\n                \"ipAddress\": \"192.168.1.1\",\n                \"id\": \"61f04637723c8328eb203195\"\n            },\n            \"id\": \"61f05d11a64bde3dc27e8bc7\"\n        },\n        {\n            \"uid\": 1234,\n            \"vendor\": \"China\",\n            \"createdAt\": \"2021-01-01\",\n            \"status\": true,\n            \"gateway\": {\n                \"serialNumber\": \"1223\",\n                \"ipAddress\": \"192.168.1.1\",\n                \"id\": \"61f04637723c8328eb203195\"\n            },\n            \"id\": \"61f05d12a64bde3dc27e8bcb\"\n        },\n        {\n            \"uid\": 1234,\n            \"vendor\": \"China\",\n            \"createdAt\": \"2021-01-01\",\n            \"status\": true,\n            \"gateway\": {\n                \"serialNumber\": \"1223\",\n                \"ipAddress\": \"192.168.1.1\",\n                \"id\": \"61f04637723c8328eb203195\"\n            },\n            \"id\": \"61f05d13a64bde3dc27e8bcf\"\n        },\n        {\n            \"uid\": 1234,\n            \"vendor\": \"China\",\n            \"createdAt\": \"2021-01-01\",\n            \"status\": true,\n            \"gateway\": {\n                \"serialNumber\": \"1223\",\n                \"ipAddress\": \"192.168.1.1\",\n                \"id\": \"61f04637723c8328eb203195\"\n            },\n            \"id\": \"61f05d14a64bde3dc27e8bd3\"\n        },\n        {\n            \"uid\": 1234,\n            \"vendor\": \"China\",\n            \"createdAt\": \"2021-01-01\",\n            \"status\": true,\n            \"gateway\": {\n                \"serialNumber\": \"1223\",\n                \"ipAddress\": \"192.168.1.1\",\n                \"id\": \"61f04637723c8328eb203195\"\n            },\n            \"id\": \"61f05d14a64bde3dc27e8bd7\"\n        },\n        {\n            \"uid\": 1234,\n            \"vendor\": \"China\",\n            \"createdAt\": \"2021-01-01\",\n            \"status\": true,\n            \"gateway\": {\n                \"serialNumber\": \"1223\",\n                \"ipAddress\": \"192.168.1.1\",\n                \"id\": \"61f04637723c8328eb203195\"\n            },\n            \"id\": \"61f05d15a64bde3dc27e8bdb\"\n        },\n        {\n            \"uid\": 1234,\n            \"vendor\": \"China\",\n            \"createdAt\": \"2021-01-01\",\n            \"status\": true,\n            \"gateway\": {\n                \"serialNumber\": \"1223\",\n                \"ipAddress\": \"192.168.1.1\",\n                \"id\": \"61f04637723c8328eb203195\"\n            },\n            \"id\": \"61f05d16a64bde3dc27e8bdf\"\n        }\n    ],\n    \"pagination\": {\n        \"hasNext\": false,\n        \"total\": 10\n    },\n    \"message\": \"\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Save Device",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"uid\": 1234,\n    \"vendor\": \"China\",\n    \"createdAt\": \"2021-01-01\",\n    \"status\": true  \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base}}/api/v1/gateways/61f04637723c8328eb203195/devices",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"gateways",
+								"61f04637723c8328eb203195",
+								"devices"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Save Device",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"uid\": 1234,\n    \"vendor\": \"China\",\n    \"createdAt\": \"2021-01-01\",\n    \"status\": true  \n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base}}/api/v1/gateways/61f04637723c8328eb203195/devices",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"gateways",
+										"61f04637723c8328eb203195",
+										"devices"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "201"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"c9-nk+p/l9fDP0ya+YKw31NBZyLc7A\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 25 Jan 2022 19:54:40 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": {\n        \"uid\": 1234,\n        \"vendor\": \"China\",\n        \"createdAt\": \"2021-01-01\",\n        \"status\": true,\n        \"gateway\": {\n            \"id\": \"61f04637723c8328eb203195\"\n        },\n        \"id\": \"61f05580b9b42833a955a2d3\"\n    },\n    \"pagination\": null,\n    \"message\": \"Success\"\n}"
+						},
+						{
+							"name": "In case Of Exceeding limits",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"uid\": 1234,\n    \"vendor\": \"China\",\n    \"createdAt\": \"2021-01-01\",\n    \"status\": true  \n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base}}/api/v1/gateways/61f04637723c8328eb203195/devices",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"gateways",
+										"61f04637723c8328eb203195",
+										"devices"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "172"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"ac-HyG+ZEkH5idTWefmKL3rRxr3nRo\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 25 Jan 2022 20:09:47 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"errors\": [\n        {\n            \"msg\": \"This Devices has the maximum capacity (10)\",\n            \"param\": \"Devices\",\n            \"location\": \"body\"\n        }\n    ],\n    \"message\": \"This Devices has the maximum capacity (10)\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get One",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base}}/api/v1/gateways/61f04637723c8328eb203195/devices/61f05580b9b42833a955a2d3",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"gateways",
+								"61f04637723c8328eb203195",
+								"devices",
+								"61f05580b9b42833a955a2d3"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get One",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base}}/api/v1/gateways/61f04637723c8328eb203195/devices/61f05580b9b42833a955a2d3",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"gateways",
+										"61f04637723c8328eb203195",
+										"devices",
+										"61f05580b9b42833a955a2d3"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "248"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"f8-4CsUkAtyt5Aow656R//veJ5F+e4\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 25 Jan 2022 20:34:40 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": {\n        \"uid\": 1234,\n        \"vendor\": \"China\",\n        \"createdAt\": \"2021-01-01\",\n        \"status\": false,\n        \"gateway\": {\n            \"serialNumber\": \"1223\",\n            \"ipAddress\": \"192.168.1.1\",\n            \"id\": \"61f04637723c8328eb203195\"\n        },\n        \"id\": \"61f05580b9b42833a955a2d3\"\n    },\n    \"pagination\": null,\n    \"message\": \"\"\n}"
+						}
+					]
+				},
+				{
+					"name": "UpdateOne",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"uid\": 1234,\n    \"vendor\": \"China\",\n    \"createdAt\": \"2021-01-01\",\n    \"status\": false  \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base}}/api/v1/gateways/61f04637723c8328eb203195/devices/61f05580b9b42833a955a2d3",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"gateways",
+								"61f04637723c8328eb203195",
+								"devices",
+								"61f05580b9b42833a955a2d3"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "UpdateOne",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"uid\": 1234,\n    \"vendor\": \"China\",\n    \"createdAt\": \"2021-01-01\",\n    \"status\": false  \n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base}}/api/v1/gateways/61f04637723c8328eb203195/devices/61f05580b9b42833a955a2d3",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"gateways",
+										"61f04637723c8328eb203195",
+										"devices",
+										"61f05580b9b42833a955a2d3"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "248"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"f8-4CsUkAtyt5Aow656R//veJ5F+e4\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 25 Jan 2022 20:37:02 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": {\n        \"uid\": 1234,\n        \"vendor\": \"China\",\n        \"createdAt\": \"2021-01-01\",\n        \"status\": false,\n        \"gateway\": {\n            \"serialNumber\": \"1223\",\n            \"ipAddress\": \"192.168.1.1\",\n            \"id\": \"61f04637723c8328eb203195\"\n        },\n        \"id\": \"61f05580b9b42833a955a2d3\"\n    },\n    \"pagination\": null,\n    \"message\": \"\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete Device",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base}}/api/v1/gateways/61f04637723c8328eb203195/devices/61f05580b9b42833a955a2d3",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"gateways",
+								"61f04637723c8328eb203195",
+								"devices",
+								"61f05580b9b42833a955a2d3"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete Device",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base}}/api/v1/gateways/61f04637723c8328eb203195/devices/61f05580b9b42833a955a2d3",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"gateways",
+										"61f04637723c8328eb203195",
+										"devices",
+										"61f05580b9b42833a955a2d3"
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"39-ghIqKqZr0acI84hvw7f5RwoiY9g\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 25 Jan 2022 20:37:41 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base",
+			"value": "http://localhost:5024",
+			"type": "string"
+		}
+	]
+}
