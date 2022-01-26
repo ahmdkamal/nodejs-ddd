@@ -6,8 +6,10 @@ const dbConfig = require('./db');
 const routesConfig = require('./routes');
 
 module.exports = async () => {
-    await dbConfig.connect();
-    await routesConfig(app);
+    // Wait until the DB is connected and publish the routes
+    dbConfig.connect().then(async () => {
+        await routesConfig(app);
+    });
 
     return app;
 };
