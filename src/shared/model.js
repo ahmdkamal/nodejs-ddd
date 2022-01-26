@@ -56,7 +56,7 @@ module.exports = class GenericModel {
         const {modelSchema, filter, populate} = params;
         return await this.DbAccess.findOneAndUpdate(filter, modelSchema, {
             runValidators: true,
-            new: false
+            new: true
         }).populate(populate)
     }
 

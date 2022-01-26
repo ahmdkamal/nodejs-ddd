@@ -1,5 +1,5 @@
 const https = require('http');
-require('dotenv').config({ path: `.env` });
+require('dotenv').config({path: `.env`});
 
 const appConfig = require('./src');
 

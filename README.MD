@@ -22,7 +22,7 @@ Docker is required
 
 ## How to run things
 
-This is very simple run `docker-compose up -d`, but before this you will
+This is very simple run `make start`, but before this you will
 need to copy `.env.example` file and change the values depending on 
 what ports are opened on your machine and username, password you want.
 
@@ -34,3 +34,7 @@ what ports are opened on your machine and username, password you want.
 After running the command you will need to import the postman collection `Musala.postman_collection.json`,
 and change in the collection's config the port you put on `.env`
 
+
+## How to run testing
+
+run `make testing`
